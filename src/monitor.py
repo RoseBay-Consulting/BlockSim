@@ -7,12 +7,15 @@ def creater_logger():
     now = datetime.datetime.now()
     today = now.strftime("%Y-%m-%d")
     time_now = now.strftime("%H_%M_%S")
+    loggerPath = os.path.join(os.getcwd(),'logs')
     folderpath = os.path.join(os.getcwd(), 'logs/%s'%today)
     fullpath = os.path.join(folderpath,time_now)
+
     if os.path.exists(folderpath):
         print(True)
         os.mkdir(fullpath)
     else:
+        os.mkdir(loggerPath)
         os.mkdir(folderpath)
         os.mkdir(fullpath)
     PENDING_TRANSACTION = '%s/pending_transactions.csv'%fullpath
