@@ -15,9 +15,11 @@ def creater_logger():
         print(True)
         os.mkdir(fullpath)
     else:
-        os.mkdir(loggerPath)
+        if os.path.exists(loggerPath) == False:
+            os.mkdir(loggerPath)
         os.mkdir(folderpath)
         os.mkdir(fullpath)
+
     PENDING_TRANSACTION = '%s/pending_transactions.csv'%fullpath
     UNIQUE_BLOCKS='%s/unique_blocks.csv'%fullpath
     BLOCK_CREATION='%s/network_stability_time.csv'%fullpath
