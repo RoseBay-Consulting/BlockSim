@@ -7,20 +7,25 @@ def creater_logger():
     now = datetime.datetime.now()
     today = now.strftime("%Y-%m-%d")
     time_now = now.strftime("%H_%M_%S")
+    loggerPath = os.path.join(os.getcwd(),'logs')
     folderpath = os.path.join(os.getcwd(), 'logs/%s'%today)
     fullpath = os.path.join(folderpath,time_now)
+
     if os.path.exists(folderpath):
         print(True)
         os.mkdir(fullpath)
     else:
+        if os.path.exists(loggerPath) == False:
+            os.mkdir(loggerPath)
         os.mkdir(folderpath)
         os.mkdir(fullpath)
+
     PENDING_TRANSACTION = '%s/pending_transactions.csv'%fullpath
     UNIQUE_BLOCKS='%s/unique_blocks.csv'%fullpath
-    BLOCK_CREATION='%s/block_creation.csv'%fullpath
+    BLOCK_CREATION='%s/network_stability_time.csv'%fullpath
     MESSAGE_COUNT= '%s/message_count.csv'%fullpath
     logger= '%s/blockchain.csv'%fullpath
-    block_stability='%s/block_stability.csv'%fullpath
+    block_stability='%s/block_stability_msg.csv'%fullpath
 
     message_count_logger=logging.getLogger("blockchain.MESSAGE_COUNT")
     message_count_logger.setLevel(logging.INFO)
@@ -59,7 +64,7 @@ def creater_logger():
     block_stability_logger.addHandler(block_stability_logger_file_handler)
 
     message_count_logger.info("Time,message_count")
-    block_creation_logger.info("Time, average block")
+    block_creation_logger.info("Stability time")
     pending_transaction_logger.info("Time, pending_transaction")
     unique_block_logger.info("Time,unique_blocks")
     block_stability_logger.info("Time,Node,Block")

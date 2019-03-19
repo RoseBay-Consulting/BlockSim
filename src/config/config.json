@@ -1,20 +1,22 @@
 {
-	"n_nodes":2,
+	"n_nodes":20,
 	"max_latency":3,
-	"consensus":"POW",
-	"sim_time":50,
-	"mean_tx_generation":3,
+	"consensus":"POA",
+	"sim_time":500000,
+	"mean_tx_generation":10,
 	"sd_tx_generation":0.1,
-	"mean_tx_gas":21000,
-	"sd_tx_gas":3000,
+	"mean_tx_gas":30000,
+	"sd_tx_gas":1000,
 	"mean_tx_size":208,
 	"sd_tx_size":2,
 	"load_csv":1,
-	"block_gas_limit":4700000,
-	"mining_time_avg":5,
-	"mining_time_sd":4,
+	"block_gas_limit":5000000,
 	"block_verify_time":2,
 	"POW":{
 		"miner_number":1
+	},
+	"POA":{
+		"mining_time":1000,
+		"sealer_number":1
 	}
 }
