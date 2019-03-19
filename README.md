@@ -33,3 +33,16 @@ Currently, for changing the parameters of the simulation, we need to change the 
 ## Format of Log:
 
         Time |  nodeID  |  Event   | Data Type  | Data ID  
+        
+## Contribution
+If you would like to contribute on the BlockSIM project,
+1. Fork this repository
+2. Clone the repository
+3. Make the changes and commit those changes
+4. Push the committed work and
+5. Send the pull request.
+
+Our core developer team will review and merge the committed work into the main code base. Please make sure your contribution is useful and relevant before submitting.
+
+## License
+The BlockSIM project is licensed under [MIT License](https://opensource.org/licenses/MIT) and also included in our repository in the [LICENSE.md](https://github.com/RoseBay-Consulting/BlockSim/blob/master/LICENSE.md)
